@@ -2,7 +2,6 @@
 pragma solidity ^0.8.19;
 
 contract HelperConfig {
-
     struct NetworkConfig {
         address priceFeed;
     }
@@ -25,13 +24,11 @@ contract HelperConfig {
         });
     }
 
-        function getMainNetEthConfig() public pure returns (NetworkConfig memory) {
+    function getMainNetEthConfig() public pure returns (NetworkConfig memory) {
         return NetworkConfig({
             priceFeed: 0xAc559F25B1619171CbC396a50854A3240b6A4e99 // ETH / USD
         });
     }
 
-    function getAnvilEthConfig() public pure returns (NetworkConfig memory) {
-
-    }
+    function getAnvilEthConfig() public pure returns (NetworkConfig memory) {}
 }

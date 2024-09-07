@@ -8,7 +8,7 @@ error FundMe__NotOwner();
 
 contract FundMe {
     using PriceConverter for uint256;
-    
+
     uint256 public constant MINIMUM_USD = 5 * 10 ** 18;
     address public immutable i_owner;
     address[] private s_funders;
