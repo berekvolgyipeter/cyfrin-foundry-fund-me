@@ -14,21 +14,24 @@ contract InteractionsTest is Test {
     uint256 constant STARTING_USER_BALANCE = 10 ether;
 
     function setUp() external {
+        // the owner of fundMe will be the foundry test environment since it is calling the setUp function
         DeployFundMe deployFundMe = new DeployFundMe();
-        console.log("deployFundMe", address(deployFundMe));
         fundMe = deployFundMe.run();
         vm.deal(USER, STARTING_USER_BALANCE);
     }
 
     function testOwnerCanFundAndWithdraw() public {
+        uint256 preOwnerBalance = address(fundMe.getOwner()).balance;
         FundFundMe fundFundMe = new FundFundMe();
         WithdrawFundMe withdrawFundMe = new WithdrawFundMe();
 
         fundFundMe.fundFundMe(address(fundMe));
         assert(address(fundMe).balance == SEND_VALUE);
+        assert(address(fundMe.getOwner()).balance == preOwnerBalance - SEND_VALUE);
 
         withdrawFundMe.withdrawFundMe(address(fundMe));
         assert(address(fundMe).balance == 0);
+        assert(address(fundMe.getOwner()).balance == preOwnerBalance);
     }
 
     function testUserCanFundAndOwnerWithdraw() public {
