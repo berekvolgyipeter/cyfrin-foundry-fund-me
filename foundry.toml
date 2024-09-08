@@ -5,5 +5,6 @@ libs = ["lib"]
 remappings = [
     "@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
 ]
+ffi = true # this allows foundry to run scrips on our machine, thus it's recommended to be cautious with this setting
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

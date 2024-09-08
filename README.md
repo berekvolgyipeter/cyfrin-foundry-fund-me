@@ -4,6 +4,7 @@
 
 ```zsh
 forge install smartcontractkit/chainlink-brownie-contracts@v1.2.0 --no-commit
+forge install Cyfrin/foundry-devops --no-commit
 ```
 
 ## tests
