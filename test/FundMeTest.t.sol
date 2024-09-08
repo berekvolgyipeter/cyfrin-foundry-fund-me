@@ -82,11 +82,12 @@ contract FundMeTest is Test {
 
     function testWithdrawFromMultipleFunders() public funded {
         uint160 numberOfFunders = 10;
-        uint160 startingFunderIndex = 2;
+        uint160 startingFunderIndex = 1;
+        // only uin160 can be casted to address
         for (uint160 i = startingFunderIndex; i < numberOfFunders + startingFunderIndex; i++) {
             // we get hoax from stdcheats
             // prank + deal
-            hoax(address(i), STARTING_USER_BALANCE);
+            hoax(address(i), SEND_VALUE);
             fundMe.fund{value: SEND_VALUE}();
         }
 
