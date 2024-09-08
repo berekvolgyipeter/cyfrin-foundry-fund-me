@@ -40,8 +40,11 @@ contract FundMe {
     }
 
     function withdraw() public onlyOwner {
-        for (uint256 funderIndex = 0; funderIndex < s_funders.length; funderIndex++) {
-            address funder = s_funders[funderIndex];
+        // MLOAD (reading from memory) costs 3 gas,
+        // SLOAD (reading from storage) costs 100 gas
+        uint256 fundersLength = s_funders.length;
+        for (uint256 i = 0; i < fundersLength; i++) {
+            address funder = s_funders[i];
             s_addressToAmountFunded[funder] = 0;
         }
         s_funders = new address[](0);
