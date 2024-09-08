@@ -1,12 +1,12 @@
-## cyfrin-foundry-fund-me
+# cyfrin-foundry-fund-me
 
-### install dependencies
+## install dependencies
 
 ```zsh
 forge install smartcontractkit/chainlink-brownie-contracts@v1.2.0 --no-commit
 ```
 
-### tests
+## tests
 
 run all tests:
 
@@ -30,4 +30,10 @@ check coverage:
 
 ```zsh
 forge coverage
+```
+
+coverage with lcoc report:
+
+```zsh
+forge coverage --report lcov
 ```
