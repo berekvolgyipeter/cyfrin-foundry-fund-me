@@ -37,3 +37,9 @@ coverage with lcoc report:
 ```zsh
 forge coverage --report lcov
 ```
+
+## check gas costs
+
+```zsh
+forge snapshot --mt testWithdrawFromASingleFunder
+```

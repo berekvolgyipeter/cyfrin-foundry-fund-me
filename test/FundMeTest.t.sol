@@ -11,6 +11,7 @@ contract FundMeTest is Test {
     address USER = makeAddr("user");
     uint256 constant SEND_VALUE = 0.1 ether; // 1e18
     uint256 constant STARTING_USER_BALANCE = 10 ether;
+    // uint256 constant GAS_PRICE = 1;
 
     modifier funded() {
         vm.prank(USER);
