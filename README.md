@@ -43,3 +43,11 @@ forge coverage --report lcov
 ```zsh
 forge snapshot --mt testWithdrawFromASingleFunder
 ```
+
+## storage optimization
+
+run example script:
+
+```zsh
+forge script script/DeployFunWithStorage.s.sol:DeployFunWithStorage --rpc-url $RPC_URL --account anvilPrivateKey0 --sender $(cast wallet address --account anvilPrivateKey0) --broadcast -vvvv
+```
