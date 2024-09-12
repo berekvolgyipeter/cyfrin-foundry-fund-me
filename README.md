@@ -24,7 +24,7 @@ forge test --mt testPriceFeedVersionIsAccurate
 run rorking test:
 
 ```zsh
-forge test --mt testPriceFeedVersionIsAccurate --fork-url $SEPOLIA_RPC_URL
+forge test --mt testPriceFeedVersionIsAccurate --fork-url $RPC_URL_SEPOLIA
 ```
 
 check coverage:
