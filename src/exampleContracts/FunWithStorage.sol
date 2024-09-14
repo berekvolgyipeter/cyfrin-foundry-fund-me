@@ -12,8 +12,8 @@ contract FunWithStorage {
         k: The key in hex
         h: Some function based on the type. For uint256, it just pads the hex
         */
-    uint256 constant NOT_IN_STORAGE = 123;
-    uint256 immutable i_not_in_storage;
+    uint256 constant NOT_IN_STORAGE = 123; // must be assigned at compile time
+    uint256 immutable i_not_in_storage; // must be assigned at deploy time
 
     constructor() {
         favoriteNumber = 25; // See stored spot above // SSTORE

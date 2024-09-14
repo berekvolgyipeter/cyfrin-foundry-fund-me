@@ -53,8 +53,10 @@ deploy-zk-sepolia:
 
 
 # For deploying Interactions.s.sol:FundFundMe as well as for Interactions.s.sol:WithdrawFundMe we have to include a sender's address `--sender <ADDRESS>`
-SENDER_ADDRESS := 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
- 
+SENDER_ADDRESS := $(PUBLIC_KEY_ANVIL_0)
+
+# in these below 2 targets the sender address has to be the public key of the private key in NETWORK_ARGS
+# because that account deploys the interaction contracts which call the methods of the lates FundMe contract
 fund:
 	@forge script script/Interactions.s.sol:FundFundMe --sender $(SENDER_ADDRESS) $(NETWORK_ARGS)
 
