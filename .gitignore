@@ -18,3 +18,4 @@ lib/
 report/
 lcov.info
 .vscode
+.DS_Store
